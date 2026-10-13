@@ -1,0 +1,9 @@
+node_modules/
+.sites-cache/
+.sites-workflow/
+*.tar.gz
+*.tar
+qa/
+source-data.json
+.openai/
+qa-check.mjs

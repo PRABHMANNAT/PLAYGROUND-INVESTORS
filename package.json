@@ -1,0 +1,1 @@
+{"name":"playground-leads","version":"1.0.0","private":true,"description":"Playground investor lead workspace","scripts":{"prepare-data":"node prepare-data.mjs","preview":"node server.mjs","check":"node --check dist/app.js"}}
