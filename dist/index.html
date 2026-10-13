@@ -1,53 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#262a24"><meta name="description" content="Playground's investor workspace. Explore your Sydney leads, organize outreach, and keep every next step in view.">
-  <title>Playground · Investor workspace</title>
-  <link rel="icon" href="assets/playground-logo.png"><link rel="stylesheet" href="styles.css">
-  <script src="data.js" defer></script><script src="app.js" defer></script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f7"><meta name="description" content="Playground's investor workspace. Find the right investors and keep track of your outreach.">
+<title>Playground · Investors</title>
+<link rel="icon" href="assets/playground-logo.png"><link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script><script src="app.js" defer></script>
 </head>
 <body>
 <div class="app-shell">
-  <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#leads" aria-label="Playground home"><img src="assets/playground-logo.png" alt="Playground logo"><span>playground<span class="brand-dot">.</span></span></a>
-    <div class="workspace-label"><span class="workspace-icon">P</span><div>Playground HQ<small>Fundraising workspace</small></div><span class="small-lock" aria-hidden="true">↗</span></div>
-    <div class="nav-label">WORKSPACE</div>
-    <nav id="navigation" aria-label="Main navigation">
-      <button data-view="leads" class="nav-item active"><span data-icon="grid"></span>All investors<span class="nav-count" id="lead-nav-count">20</span></button>
-      <button data-view="pipeline" class="nav-item"><span data-icon="columns"></span>Outreach pipeline</button>
-      <button data-view="checklist" class="nav-item"><span data-icon="checkSquare"></span>Checklists<span class="nav-notice"></span></button>
-      <button data-view="contacts" class="nav-item"><span data-icon="users"></span>People & contacts</button>
-      <button data-view="shortlist" class="nav-item"><span data-icon="bookmark"></span>Shortlist<span class="nav-count" id="shortlist-count">0</span></button>
-    </nav>
-    <div class="sidebar-bottom">
-      <div class="sidebar-note"><span class="note-kicker">A LITTLE MOMENTUM</span><p>Big ideas start with<br>one conversation.</p><span class="note-flower" aria-hidden="true">✳</span></div>
-      <button id="backup-button" class="utility-button"><span data-icon="download"></span>Back up workspace</button>
-      <button id="restore-button" class="utility-button"><span data-icon="upload"></span>Restore backup</button>
-      <div class="profile"><span class="avatar">P</span><div>Playground team<small>Private workspace</small></div><span data-icon="lock"></span></div>
-    </div>
-  </aside>
-  <main class="main">
-    <header class="topbar"><div class="breadcrumb"><button class="icon-button mobile-menu" id="menu-button" aria-label="Toggle navigation"><span data-icon="menu"></span></button><span>Workspace</span><span class="crumb-separator">/</span><strong id="breadcrumb-title">All investors</strong></div><div class="topbar-right"><span class="save-indicator"><i></i><span id="save-label">Saved on this browser</span></span><span class="top-avatar">P</span></div></header>
-    <div class="main-content">
-      <section class="page-heading"><div><p class="eyebrow">YOUR FUNDRAISING, IN FOCUS</p><h1 id="page-title">Investor workspace<span class="orange-dot">.</span></h1><p id="page-subtitle">The right people. A thoughtful approach. Your next big step.</p></div><button class="button button-dark" id="add-lead-button"><span data-icon="plus"></span>Add investor</button></section>
-      <section class="intro-grid" id="intro-section">
-        <div class="hero"><div class="hero-copy"><span class="hero-kicker"><i></i> THE PLAYGROUND CONNECTIONS</span><h2>Good conversations.<br>Great beginnings.</h2><p>Your ideas deserve the right partners.<br>Let’s find them, one connection at a time.</p><button id="hero-button" class="hero-button">Explore strong matches<span data-icon="arrowUpRight"></span></button></div><div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-orbit orbit-three"></div><img src="assets/playground-logo.png" alt=""><span class="art-label">IDEAS MEET POSSIBILITY</span></div><span class="hero-number">01 / THE NEXT CHAPTER</span></div>
-        <div class="focus-panel"><span class="panel-kicker"><span data-icon="compass"></span>YOUR FIRST MOVE</span><h3>Start with<br>the strongest fit.</h3><p>Explore investors whose focus aligns with Playground’s AI testing and simulation platform.</p><div class="focus-bottom"><div class="stacked-avatars"><span>BN</span><span>J</span><span>A</span></div><span id="strong-caption">14 strong matches</span></div><button id="focus-button" class="text-button">Find your starting point<span data-icon="arrowRight"></span></button></div>
-      </section>
-      <section class="metrics" id="metrics" aria-label="Workspace summary"></section>
-      <section class="directory" id="directory-section">
-        <div class="section-heading"><div><h2 id="section-title">Meet your next partners<span class="section-count" id="result-count">20</span></h2><p id="section-description">A curated network of Sydney investors, ready to explore.</p></div><button id="export-button" class="button button-light"><span data-icon="download"></span>Export CSV</button></div>
-        <div class="filters"><label class="search-field"><span data-icon="search"></span><input id="search-input" type="search" placeholder="Search investors, people, or focus…" aria-label="Search investors and contacts"><kbd>/</kbd></label><select id="fit-filter" aria-label="Filter by investment fit"><option value="all">All fit levels</option><option value="Strong">Strong fit</option><option value="Conditional">Conditional fit</option><option value="Later">Later stage</option></select><select id="status-filter" aria-label="Filter by outreach status"><option value="all">All statuses</option></select><select id="sort-select" aria-label="Sort investors"><option value="source">Source order</option><option value="name">Name A–Z</option><option value="progress">Checklist progress</option><option value="due">Follow-up date</option></select><div class="view-switch" id="view-switch"><button class="icon-button active" data-layout="cards" aria-label="Card view" aria-pressed="true"><span data-icon="grid"></span></button><button class="icon-button" data-layout="table" aria-label="Table view" aria-pressed="false"><span data-icon="list"></span></button></div></div>
-        <div class="active-filters" id="active-filters"></div><div id="view-content" aria-live="polite"></div>
-      </section>
-      <footer class="page-footer"><span><span class="footer-mark">✳</span> Made for what comes next.</span><span>Source: Sydney Investor List · 13 Oct 2026 <span class="footer-divider">/</span> <button id="storage-info">About this workspace</button></span></footer>
-    </div>
-  </main>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="#leads" aria-label="Playground home"><img src="assets/playground-logo.png" alt="Playground logo"><span>playground<span class="brand-dot">.</span></span></a>
+<nav id="navigation" aria-label="Main navigation">
+<button data-view="leads" class="nav-item active"><span data-icon="grid"></span>Investors<span class="nav-count" id="lead-nav-count">20</span></button>
+<button data-view="shortlist" class="nav-item"><span data-icon="bookmark"></span>Shortlist<span class="nav-count" id="shortlist-count">0</span></button>
+<button data-view="pipeline" class="nav-item"><span data-icon="columns"></span>Outreach</button>
+<button data-view="checklist" class="nav-item"><span data-icon="checkSquare"></span>Checklists</button>
+<button data-view="contacts" class="nav-item"><span data-icon="users"></span>Contacts<span class="nav-count">31</span></button>
+</nav>
+<div class="sidebar-bottom">
+<details class="backup-menu"><summary><span data-icon="download"></span>Data & backup<span class="chevron">⌄</span></summary><div class="backup-menu-content"><button id="backup-button" class="utility-button"><span data-icon="download"></span>Download backup</button><button id="restore-button" class="utility-button"><span data-icon="upload"></span>Restore backup</button></div></details>
+<p class="device-note"><span data-icon="check"></span>Progress saved on this device</p>
+</div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="breadcrumb"><button class="icon-button mobile-menu" id="menu-button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar"><span data-icon="menu"></span></button><span>Playground</span><span class="crumb-separator">/</span><strong id="breadcrumb-title">Investors</strong></div><span class="save-indicator"><i></i><span id="save-label">Saved on this device</span></span></header>
+<div class="main-content">
+<section class="page-heading"><div><h1 id="page-title">Investors</h1><p id="page-subtitle">Find the right people. Keep your next steps in one place.</p></div><button class="button button-dark" id="add-lead-button" aria-label="Add investor"><span data-icon="plus"></span><span>Add investor</span></button></section>
+<section class="metrics" id="metrics" aria-label="Investor summary"></section>
+<section class="directory" id="directory-section">
+<div class="section-heading"><div><h2 id="section-title">Your investors<span class="section-count" id="result-count">20</span></h2><p id="section-description" class="visually-hidden">Investors from your Sydney research.</p></div><button id="export-button" class="button button-light"><span data-icon="download"></span>Export</button></div>
+<div class="filters">
+<label class="search-field"><span data-icon="search"></span><input id="search-input" type="search" placeholder="Search investors or contacts" aria-label="Search investors and contacts"><kbd>/</kbd></label>
+<details class="filter-options" id="filter-options"><summary><span data-icon="sliders"></span>Filters<span id="filter-count" class="filter-count" hidden></span></summary><div class="filter-popover"><label>Investment fit<select id="fit-filter"><option value="all">All fit levels</option><option value="Strong">Strong fit</option><option value="Conditional">Conditional fit</option><option value="Later">Later stage</option></select></label><label>Outreach status<select id="status-filter"><option value="all">All statuses</option></select></label><label>Sort by<select id="sort-select"><option value="source">Original order</option><option value="name">Name A–Z</option><option value="progress">Checklist progress</option><option value="due">Follow-up date</option></select></label><button type="button" class="text-button" data-reset>Reset filters</button></div></details>
+<div class="view-switch" id="view-switch"><button class="icon-button active" data-layout="cards" aria-label="Card view" aria-pressed="true"><span data-icon="grid"></span></button><button class="icon-button" data-layout="table" aria-label="Table view" aria-pressed="false"><span data-icon="list"></span></button></div>
+</div>
+<div class="quick-filters" id="quick-filters" aria-label="Quick investment fit filters"><button class="quick-filter active" data-fit="all" aria-pressed="true">All investors</button><button class="quick-filter" data-fit="Strong" aria-pressed="false">Strong matches<span id="strong-caption">14</span></button></div>
+<div class="active-filters" id="active-filters"></div><div id="view-content" aria-live="polite"></div>
+</section>
+<footer class="page-footer"><span>Research updated 13 Oct 2026</span><button id="storage-info">About your data<span data-icon="arrowUpRight"></span></button></footer>
+</div>
+</main>
 </div>
 <div class="drawer-overlay" id="drawer-overlay" hidden></div><aside class="detail-drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title" hidden></aside>
-<dialog id="add-dialog"><form id="add-form"><div class="dialog-header"><div><p class="eyebrow">GROW YOUR NETWORK</p><h2>Add an investor</h2></div><button type="button" class="icon-button" id="close-add" aria-label="Close"><span data-icon="x"></span></button></div><label>Organization name<input name="name" required maxlength="160" placeholder="e.g. Your next investment partner"></label><div class="form-row"><label>Playground fit<select name="fit"><option>Strong</option><option>Conditional</option><option>Later stage</option></select></label><label>Stage<input name="stage" maxlength="200" placeholder="e.g. Pre-seed and seed"></label></div><label>Investment focus<input name="focus" maxlength="500" placeholder="e.g. AI, B2B software, developer tools"></label><label>Why they fit Playground<textarea name="why" rows="3" maxlength="2000" placeholder="Your reason for making the connection"></textarea></label><div class="form-row"><label>Business email<input name="email" type="email" placeholder="name@fund.com"></label><label>Website<input name="website" type="url" placeholder="https://"></label></div><label>Pitch or contact route<input name="pitch" type="url" placeholder="https://"></label><button class="button button-dark" type="submit">Add to workspace<span data-icon="arrowRight"></span></button></form></dialog>
-<dialog id="info-dialog"><div class="dialog-header"><h2>Your Playground workspace</h2><button class="icon-button" id="close-info" aria-label="Close"><span data-icon="x"></span></button></div><p>The 20 organizations and 31 contacts come from your <strong>Sydney_Investor_List.xlsx</strong>, dated 13 October 2026. Fit assessments and source links are preserved from that file.</p><p>Outreach starts at <strong>To research</strong>. Checklists, notes, bookmarks, and follow-up dates are saved in this browser. Use <strong>Back up workspace</strong> to keep a copy or move your work to another browser.</p><p>Contact details and investment terms reflect the supplied research. Each profile keeps the original contact ownership, eligibility notes, and evidence links.</p></dialog>
+<dialog id="add-dialog"><form id="add-form"><div class="dialog-header"><h2>Add an investor</h2><button type="button" class="icon-button" id="close-add" aria-label="Close"><span data-icon="x"></span></button></div><label>Organization name<input name="name" required maxlength="160" placeholder="Investor or fund name"></label><div class="form-row"><label>Investment fit<select name="fit"><option>Strong</option><option>Conditional</option><option>Later stage</option></select></label><label>Investment stage<input name="stage" maxlength="200" placeholder="e.g. Pre-seed"></label></div><label>Investment focus<input name="focus" maxlength="500" placeholder="e.g. AI, software, developer tools"></label><label>Why they fit Playground<textarea name="why" rows="3" maxlength="2000" placeholder="What makes this investor a good match?"></textarea></label><div class="form-row"><label>Business email<input name="email" type="email" placeholder="name@fund.com"></label><label>Website<input name="website" type="url" placeholder="https://"></label></div><label>Pitch or contact page<input name="pitch" type="url" placeholder="https://"></label><button class="button button-dark" type="submit">Add investor<span data-icon="arrowRight"></span></button></form></dialog>
+<dialog id="info-dialog"><div class="dialog-header"><h2>About your data</h2><button class="icon-button" id="close-info" aria-label="Close"><span data-icon="x"></span></button></div><p>Your 20 investors and 31 contacts come from <strong>Sydney_Investor_List.xlsx</strong>, dated 13 October 2026. The original fit assessments and research links are kept in each profile.</p><p>Checklists, outreach status, notes, and follow-up dates are saved on this device. Choose <strong>Data & backup → Download backup</strong> to keep a copy or move your progress to another browser.</p><p>Contact ownership, eligibility notes, and published investment terms are available in the investor profiles.</p></dialog>
 <input type="file" id="restore-input" accept="application/json,.json" hidden><div id="toast" class="toast" role="status" hidden></div>
 </body>
 </html>
